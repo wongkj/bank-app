@@ -140,4 +140,43 @@ curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/dep
     "deposit": 50
 }'
 ```
+`Withdraw from an Account`
+You will need to know your account `_id` to execute this command.
+You will need a `withdraw` amount in the Request Body. This amount could be a positive or negative value.
 
+```
+curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/withdraw/{id}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "withdraw": {amount}
+}'
+```
+Example:
+```
+curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/withdraw/648254ceb6db72b9a1669b7f' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "withdraw": 1000
+}'
+```
+`Transfer funds from one account into another account`
+You will need to know the account `_id` for both the account your withdrawing from and the one your depositing into.
+You will need an `amount` value and `otherAccountId` value in the Request Body.
+
+```
+curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/transfer/{id_withdrawing_from}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "otherAccountId": {id_depositing_into},
+    "amount": {amount}
+}'
+```
+Example:
+```
+curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/transfer/648254ceb6db72b9a1669b7f' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "otherAccountId": "648254ddb6db72b9a1669b81",
+    "amount": 3000
+}'
+```

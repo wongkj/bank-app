@@ -79,11 +79,11 @@ http://localhost:8000/api/v1/account
 
 ##### Here are some example requests you can make as the `Manager`
 &nbsp;
-##### Returning all the customer accounts
+##### RETURNING ALL THE CUSTOMER ACCOUNTS
 ```
 curl --location --request GET 'http://localhost:8000/api/v1/account/manager'
 ```
-##### Returning the total bank balance
+##### RETURNING THE TOTAL BANK BALANCE
 ```
 curl --location --request GET 'http://localhost:8000/api/v1/account/manager/balance'
 ```
@@ -91,7 +91,7 @@ curl --location --request GET 'http://localhost:8000/api/v1/account/manager/bala
 ##### Here are some example requests you can make as the `Customer`
 &nbsp;
 
-##### Returning your account information
+##### RETURNING YOUR ACCOUNT INFORMATION
 You will need to know your account `_id` to execute this command.
 
 ```
@@ -101,7 +101,7 @@ Example:
 ```
 curl --location --request GET 'http://localhost:8000/api/v1/account/customer/6482554ab6db72b9a1669b89'
 ```
-##### Creating a new account
+##### CREATING A NEW ACCOUNT
 You will need your `name` and a `balance` in the Request Body. The `balance` will be the initial deposit.
 
 ```
@@ -121,7 +121,7 @@ curl --location --request POST 'http://localhost:8000/api/v1/account/customer' \
     "balance": 1000000
 }'
 ```
-##### Deposit into Account
+##### DEPOSIT INTO ACCOUNT
 You will need to know your account `_id` to execute this command.
 You will need a `deposit` amount in the Request Body.
 
@@ -140,7 +140,7 @@ curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/dep
     "deposit": 50
 }'
 ```
-##### Withdraw from an Account
+##### WITHDRAW FROM AN ACCOUNT
 You will need to know your account `_id` to execute this command.
 You will need a `withdraw` amount in the Request Body. This amount could be a positive or negative value.
 
@@ -159,7 +159,7 @@ curl --location --request PUT 'http://localhost:8000/api/v1/account/customer/wit
     "withdraw": 1000
 }'
 ```
-##### Transfer funds from one account into another account
+##### TRANSFER FUNDS FROM ONE ACCOUNT TO ANOTHER ACCOUNT
 You will need to know the account `_id` for both the account your withdrawing from and the one your depositing into.
 You will need an `amount` value and `otherAccountId` value in the Request Body.
 

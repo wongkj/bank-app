@@ -10,6 +10,7 @@ router
 router
   .route("/customer/:id")
   .delete(accountController.removeAccount)
+  .get(accountController.findAccountById)
 
 router
   .route("/customer/deposit/:id")
@@ -24,12 +25,8 @@ router
   .put(accountController.transfer) 
 
 router
-  .route("/manager/find")
+  .route("/manager")
   .get(accountController.findAllAccounts)
-
-router
-  .route("/manager/find/:id")
-  .get(accountController.findAccountById)
 
 router
   .route("/manager/balance")

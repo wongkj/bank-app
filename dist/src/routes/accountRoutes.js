@@ -34,7 +34,8 @@ router
     .post(accountController.createNewAccount);
 router
     .route("/customer/:id")
-    .delete(accountController.removeAccount);
+    .delete(accountController.removeAccount)
+    .get(accountController.findAccountById);
 router
     .route("/customer/deposit/:id")
     .put(accountController.deposit);
@@ -45,11 +46,8 @@ router
     .route("/customer/transfer/:id")
     .put(accountController.transfer);
 router
-    .route("/manager/find")
+    .route("/manager")
     .get(accountController.findAllAccounts);
-router
-    .route("/manager/find/:id")
-    .get(accountController.findAccountById);
 router
     .route("/manager/balance")
     .get(accountController.getBankBalance);

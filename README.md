@@ -76,7 +76,7 @@ Once the Docker Container is up and running, the app should be ready to use.
 ```
 http://localhost:8000/api/v1/account
 ```
-
+&nbsp;
 ### Here are some example requests you can make as the `Manager`
 &nbsp;
 ##### RETURNING ALL THE CUSTOMER ACCOUNTS
@@ -87,7 +87,7 @@ curl --location --request GET 'http://localhost:8000/api/v1/account/manager'
 ```
 curl --location --request GET 'http://localhost:8000/api/v1/account/manager/balance'
 ```
-
+&nbsp;
 ### Here are some example requests you can make as the `Customer`
 &nbsp;
 
